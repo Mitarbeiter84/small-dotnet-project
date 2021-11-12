@@ -19,7 +19,7 @@ jobs:
       - run:
           name: Package
           command: |
-            dotnet pack --release
+            dotnet pack --configuration Release
       - store_artifacts:
           path: Application/bin/Release/Application.1.0.0.nupkg
       - store_artifacts:
