@@ -21,9 +21,9 @@ jobs:
           command: |
             dotnet pack --configuration Release
       - store_artifacts:
-          path: Application/bin/Release/Application.1.0.0.nupkg
+          path: Application/bin/Release/Application.*.nupkg
       - store_artifacts:
-          path: Library/bin/Release/Library.1.0.0.nupkg
+          path: Library/bin/Release/Library.*.nupkg
 
 workflows:
   default:
