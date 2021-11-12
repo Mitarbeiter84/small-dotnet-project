@@ -20,10 +20,10 @@ jobs:
           name: Package
           command: |
             dotnet pack --configuration Release
+            mv Application/bin/Release/Application.*.nupkg /tmp/artifacts
+            mv Library/bin/Release/Library.*.nupkg /tmp/artifacts
       - store_artifacts:
-          path: Application/bin/Release/Application.*.nupkg
-      - store_artifacts:
-          path: Library/bin/Release/Library.*.nupkg
+          path: /tmp/artifacts
 
 workflows:
   default:
