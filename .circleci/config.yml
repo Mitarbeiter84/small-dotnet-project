@@ -11,10 +11,12 @@ jobs:
           working_directory: ./Tests
           name: Build and Test
           command: |
-            REPORTS_PATH=./test-reports/build_${CIRCLE_BUILD_NUMBER}
+            REPORTS_PATH=./test-reports/build_${CIRCLE_BUILD_NUM}
             dotnet restore
             dotnet build --configuration Release
             dotnet test --no-build --configuration Release --test-adapter-path:. --logger:"nunit;LogFilePath=$REPORTS_PATH/junit.xml"
+      - store_artifacts:
+          path: ./test-reports/build_${CIRCLE_BUILD_NUM}
 
 workflows:
   default:
