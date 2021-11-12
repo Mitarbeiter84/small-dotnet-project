@@ -1,13 +1,10 @@
-module Tests
+namespace SmallDotnetProject
 
-open NUnit.Framework
-open SmallDotnetProject
+open System
+open Xunit
 
+module Tests =
 
-[<SetUp>]
-let Setup () =
-    ()
-
-[<Test>]
-let Test1 () =
-    Assert.AreEqual("Hello Tim", (Say.hello "Tim"))
+    [<Fact>]
+    let Test1 () =
+        Assert.Equal("Hello Tim", (Say.hello "Tim"))
