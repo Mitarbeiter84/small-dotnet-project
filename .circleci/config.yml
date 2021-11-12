@@ -7,9 +7,7 @@ jobs:
     steps:
       - checkout
       - run:
-          # Update this line with the directory that contains your tests project file
-          working_directory: ./Tests
-          name: Build and Test
+          name: Test
           command: |
             REPORTS_PATH=./test-reports
             dotnet restore
