@@ -15,9 +15,8 @@ jobs:
             dotnet restore
             dotnet build --configuration Release
             dotnet test --no-build --configuration Release --test-adapter-path:. --logger:"nunit;LogFilePath=$REPORTS_PATH/junit.xml"
-            cp ./test-reports/junit.xml /tmp/junit.xml
       - store_test_results:
-          path: /tmp/junit.xml
+          path: ./test-reports
 
 workflows:
   default:
