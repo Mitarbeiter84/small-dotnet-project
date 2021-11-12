@@ -10,7 +10,7 @@ jobs:
           name: Test
           command: |
             dotnet build --configuration Release
-            dotnet test --no-build --configuration Release --test-adapter-path:. --logger:"nunit;LogFilePath=./test-reports/results.xml"
+            dotnet test --no-build --configuration Release --logger:"junit;LogFilePath=./test-reports/results.xml"
       - store_test_results:
           path: ./Tests/test-reports
 
