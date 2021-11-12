@@ -16,7 +16,7 @@ jobs:
             pwd
             find . -name junit.xml
       - store_test_results:
-          path: ./test-reports
+          path: ./Tests/test-reports
 
 workflows:
   default:
