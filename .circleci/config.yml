@@ -9,12 +9,8 @@ jobs:
       - run:
           name: Test
           command: |
-            REPORTS_PATH=./test-reports
-            dotnet restore
             dotnet build --configuration Release
-            dotnet test --no-build --configuration Release --test-adapter-path:. --logger:"nunit;LogFilePath=$REPORTS_PATH/junit.xml"
-            pwd
-            find . -name junit.xml
+            dotnet test --no-build --configuration Release --test-adapter-path:. --logger:"nunit;LogFilePath=./test-reports/results.xml"
       - store_test_results:
           path: ./Tests/test-reports
 
